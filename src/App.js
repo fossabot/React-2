@@ -17,6 +17,10 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/favourite" component={Favourites} />
         </Switch>
+      <p className="Env-vars">
+        Environment: {Config.environment}<br />
+        Timezone: {Config.timezone}
+        </p>
       </>
     );
   }
