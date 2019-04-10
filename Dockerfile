@@ -1,11 +1,19 @@
-FROM node:8.9.4-alpine as builder
+FROM node:9.4
 
-WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn --silent install
+# Create app directory
+WORKDIR /usr/src/app
 
+# Expose port for service
+EXPOSE 8026
+
+# Install and configure `serve`.
+RUN npm install -g serve
+
+# Copy source code to image
 COPY . .
-RUN yarn run build
 
-FROM nginx:1.13.9-alpine
-COPY --from=builder /app/build /usr/share/nginx/html
+# Install dependencies
+RUN npm install
+
+# Build app and start server from script
+CMD ["/usr/src/app/run"]
