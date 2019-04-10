@@ -4,7 +4,7 @@ FROM node:9.4
 WORKDIR /usr/src/app
 
 # Expose port for service
-EXPOSE 8026
+EXPOSE 3000
 
 # Install and configure `serve`.
 RUN npm install -g serve
