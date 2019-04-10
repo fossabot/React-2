@@ -1,0 +1,2 @@
+###Add ci directory, where we configure the actions we want to run on 
+### every change on production or staging or on a pull request for a branch. 
