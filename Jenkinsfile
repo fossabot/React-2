@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Staging') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                sh './jenkins/scripts/testing.sh'
             }
         }
         stage('Production') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh './jenkins/scripts/production.sh'
                 input message: 'Stop the production server'
                 sh './jenkins/scripts/stop.sh'
             }
