@@ -1,0 +1,22 @@
+replicaCount: 2
+resources: {}
+
+image:
+  repository: vpronchev/React
+  pullPolicy: IfNotPresent
+
+serviceType: ClusterIP
+servicePort: 3000
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/ssl-redirect: "true"
+
+  hosts:
+    - apps.react.vpronchev.com
+  tls:
+    - secretName: apps-ingress-tls
+      hosts:
+        - apps.react.vpronchev.com
