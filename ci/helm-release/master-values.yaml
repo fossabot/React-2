@@ -15,8 +15,8 @@ ingress:
     ingress.kubernetes.io/ssl-redirect: "true"
 
   hosts:
-    - apps.react.vpronchev.com
+    - apps.react.pronchev.com
   tls:
     - secretName: apps-ingress-tls
       hosts:
-        - apps.react.vpronchev.com
+        - apps.react.pronchev.com
